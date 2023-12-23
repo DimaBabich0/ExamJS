@@ -1,0 +1,23 @@
+[
+    {
+        "title":"Пицца \"Маргарита\"",
+        "price":"199",
+        "description":"Классическая пицца с моцареллой и помидорами, на фирменном томатном соусе.",
+        "img":"./Pages/Main Page/imgs/photo_pizza.jpg",
+        "id":"modal1"
+    },
+    {
+        "title":"Пицца \"Маргарита\"",
+        "price":"199",
+        "description":"Классическая пицца с моцареллой и помидорами, на фирменном томатном соусе.",
+        "img":"./Pages/Main Page/imgs/photo_pizza.jpg",
+        "id":"modal2"
+    },
+    {
+        "title":"Пицца \"Маргарита\"",
+        "price":"199",
+        "description":"Классическая пицца с моцареллой и помидорами, на фирменном томатном соусе.",
+        "img":"./Pages/Main Page/imgs/photo_pizza.jpg",
+        "id":"modal3"
+    }
+]
