@@ -458,36 +458,8 @@
 
     </footer>
 
-    <script src="mustache.min.js"></script>
+    <script src="./mustache.min.js"></script>
+    <script src="./code.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems);
-        });
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.carousel');
-            var instances = M.Carousel.init(elems, {
-                fullWidth: true,
-                indicators: true
-            });
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.modal');
-            var instances = M.Modal.init(elems);
-        });
-
-        //JSON LOAD DATA
-
-        let template = document.querySelector("#templateCardPizza").innerHTML;
-        let output = document.getElementById("PizzasSection");
-        console.log(output);
-        Pizzas.forEach(element => {
-            let html = Mustache.render(template, element);
-            output.insertAdjacentHTML("beforeend", html);
-        });
-    </script>
 </body>
 </html>
