@@ -19,5 +19,12 @@
         "description":"Классическая пицца с моцареллой и помидорами, на фирменном томатном соусе.",
         "img":"./Pages/Main Page/imgs/photo_pizza.jpg",
         "id":"modal3"
+    },
+    {
+        "title":"Пицца \"4\"",
+        "price":"199",
+        "description":"Классическая пицца с моцареллой и помидорами, на фирменном томатном соусе.",
+        "img":"./Pages/Main Page/imgs/photo_pizza.jpg",
+        "id":"modal24"
     }
 ]

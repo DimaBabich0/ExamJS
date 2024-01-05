@@ -1,0 +1,16 @@
+[
+    {
+        "title":"Равиоли с курицей и грибами",
+        "price":"199",
+        "description":"Равиоли с курицей и грибами.",
+        "img":"./Pages/Main Page/imgs/photo_ravioli.jpg",
+        "id":"modal1"
+    },
+    {
+        "title":"Равиоли с курицей и грибами",
+        "price":"199",
+        "description":"Равиоли с курицей и грибами.",
+        "img":"./Pages/Main Page/imgs/photo_ravioli.jpg",
+        "id":"modal1"
+    }
+]

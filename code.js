@@ -23,6 +23,7 @@ let dataService = {
         this.basketDishes = JSON.parse(localStorage.getItem("basketDishes")) || [];
     }
 }
+
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems);
@@ -39,13 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Modal.init(elems);
 });
 
-// $(document).ready(function(){
-//     alert("jquery alert");
-// });
-
 function LoadData(u_url) 
 {
-    let ARR = new Array();
+    let arr = new Array();
     $.ajax({
         url: u_url,
         async: false,
@@ -53,42 +50,29 @@ function LoadData(u_url)
         {
             for (let i = 0; i < json.length; i++) 
             {
-                ARR.push(json[i]);
-                // console.log(json[i]);
+                arr.push(json[i]);
             }
         }
     });
-    console.log(ARR);
-    return ARR;
+    return arr;
 }
 
-const JSONPath = "./Pages/JSON/pizzas.json";
-let Pizzas = LoadData(JSONPath);
-console.log(Pizzas);
+//Вывод пицц
+const JSONPathPizza = "./Pages/JSON/pizzas.json";
+let Pizzas = LoadData(JSONPathPizza);
+let templatePizza = document.querySelector("#templateCardPizza").innerHTML;
+let outputPizza = document.getElementById("PizzasSection");
+Pizzas.forEach(element => {
+    let html = Mustache.render(templatePizza, element);
+    outputPizza.insertAdjacentHTML("beforeend", html);
+});
 
-// function LoadData(url)
-// {
-//     fetch(url)
-//     .then(response => response.json())
-//     .then(json => 
-//     {
-//         let ARR = new Array();
-//         for (let i = 0; i < json.length; i++) 
-//         {
-//             ARR.push(json[i]);
-//             console.log(json[i]);
-//         }
-//         console.log(ARR);
-//         return ARR;
-//     });
-// }
-
-
-
-// let template = document.querySelector("#templateCardPizza").innerHTML;
-// let output = document.getElementById("PizzasSection");
-// // console.log(output);
-// Pizzas.forEach(element => {
-//     let html = Mustache.render(template, element);
-//     output.insertAdjacentHTML("beforeend", html);
-// });
+//Вывод паст
+const JSONPathPasta = "./Pages/JSON/pasta.json";
+let Pasta = LoadData(JSONPathPasta);
+let templatePasta = document.querySelector("#templateCardPasta").innerHTML;
+let outputPasta = document.getElementById("PastasSection");
+Pasta.forEach(element => {
+    let htmlPasta = Mustache.render(templatePasta, element);
+    outputPasta.insertAdjacentHTML("beforeend", htmlPasta);
+});
