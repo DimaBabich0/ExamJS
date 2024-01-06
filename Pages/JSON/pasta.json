@@ -1,16 +1,44 @@
 [
     {
         "title":"Равиоли с курицей и грибами",
-        "price":"199",
-        "description":"Равиоли с курицей и грибами.",
-        "img":"./Pages/Main Page/imgs/photo_ravioli.jpg",
-        "id":"modal1"
+        "price":"219",
+        "description":"куриная печень, сливки, куриный бульон, грибы белые, шампиньоны, пармезан, шпинат, чеснок, соль, перец, масло подсолнечное, помидор черри, микрогрин",
+        "img":"./Images/Pasta/ravioli-s-kurinoj-pechenju-i-gribami.jpg",
+        "id":"ravioli-s-kurinoj-pechenju-i-gribami"
     },
     {
-        "title":"Равиоли с курицей и грибами",
+        "title":"Равиоли с мясом",
+        "price":"159",
+        "description":"мука, яйца, свино-говяжий фарш, сливочное масло, соль, перец",
+        "img":"./Images/Pasta/ravioli-s-myasom.jpg",
+        "id":"ravioli-s-myasom"
+    },
+    {
+        "title":"Неро с морепродуктами",
+        "price":"399",
+        "description":"Спагетти, креветки, кальмар, сливочный соус биск ",
+        "img":"./Images/Pasta/nero-s-moreproduktami.jpg",
+        "id":"nero-s-moreproduktami"
+    },
+    {
+        "title":"Тальятелле Болоньезе",
+        "price":"189",
+        "description":"тальятелле, фарш свинино-говяжий, лук, томаты, томатная паста, пармезан",
+        "img":"./Images/Pasta/boloneze.jpg",
+        "id":"boloneze"
+    },
+    {
+        "title":"Фетучини, курица и грибы",
         "price":"199",
-        "description":"Равиоли с курицей и грибами.",
-        "img":"./Pages/Main Page/imgs/photo_ravioli.jpg",
-        "id":"modal1"
+        "description":"куриное филе, шампиньоны, сливки, куриный бульон, пармезан, чеснок, масло подсолнечное, соль, перец, помидор черри, микрогрин",
+        "img":"./Images/Pasta/fetuchini-s-kuricej-i-gribami.jpg",
+        "id":"fetuchini-s-kuricej-i-gribami"
+    },
+    {
+        "title":"Фаготини с лососем",
+        "price":"199",
+        "description":"филе семги, сливки, шпинат, бульон куриный, чеснок, соль, перец, масло подсолнечное, помидор черри, микрогрин",
+        "img":"./Images/Pasta/fagotini-s-lososem.jpg",
+        "id":"fagotini-s-lososem"
     }
 ]

@@ -1,30 +1,44 @@
 [
     {
-        "title":"Пицца \"1\"",
-        "price":"199",
+        "title":"Маргарита",
+        "price":"129",
         "description":"Классическая пицца с моцареллой и помидорами, на фирменном томатном соусе.",
-        "img":"./Pages/Main Page/imgs/photo_pizza.jpg",
-        "id":"modal1"
+        "img":"./Images/Pizza/margarita.jpg",
+        "id":"margarita"
     },
     {
-        "title":"Пицца \"2\"",
-        "price":"199",
-        "description":"Классическая пицца с моцареллой и помидорами, на фирменном томатном соусе.",
-        "img":"./Pages/Main Page/imgs/photo_pizza.jpg",
-        "id":"modal2"
+        "title":"Фрутти Ди Маре",
+        "price":"259",
+        "description":"Морской коктейль с добавлением колец кальмара, тигровых креветок, мидии в ракушках, моцареллы, мицареллы. Готовится на фирменном соусе, по выбору: Песто, белый соус, томатный фирменный.",
+        "img":"./Images/Pizza/frutti-di-mare.jpg",
+        "id":"frutti-di-mare"
     },
     {
-        "title":"Пицца \"3\"",
-        "price":"199",
-        "description":"Классическая пицца с моцареллой и помидорами, на фирменном томатном соусе.",
-        "img":"./Pages/Main Page/imgs/photo_pizza.jpg",
-        "id":"modal3"
+        "title":"Неаполитано",
+        "price":"219",
+        "description":"С анчоусами, моцареллой, каперсами, красным луком, на фирменном томатном соусе",
+        "img":"./Images/Pizza/neapolitano.jpg",
+        "id":"neapolitano"
     },
     {
-        "title":"Пицца \"4\"",
-        "price":"199",
-        "description":"Классическая пицца с моцареллой и помидорами, на фирменном томатном соусе.",
-        "img":"./Pages/Main Page/imgs/photo_pizza.jpg",
-        "id":"modal24"
+        "title":"Гавайская",
+        "price":"159",
+        "description":"ветчина, ломтики ананаса, сыр моцарелла, шампиньоны, на фирменном томатном соусе",
+        "img":"./Images/Pizza/gavajskaya.jpg",
+        "id":"gavajskaya"
+    },
+    {
+        "title":"Деревенская",
+        "price":"189",
+        "description":"домашняя колбаса, болгарский перец, маринованный луком, шампиньоны, сыр моцарелла, на фирменном томатном соусе",
+        "img":"./Images/Pizza/derevenskaya.jpg",
+        "id":"derevenskaya"
+    },
+    {
+        "title":"Дьявола",
+        "price":"189",
+        "description":"пикантная салями, сыр моцарелла, помидор, на фирменном томатном соусе",
+        "img":"./Images/Pizza/dyavola.jpg",
+        "id":"dyavola"
     }
 ]
