@@ -7,6 +7,9 @@ let dataService = {
 
     add(dish) {
         this.allbasketDishes.push(dish);
+        refreshDataBasket();
+        deleteAllDishesToBasket();
+        addDishesToBasket();
         this.save();
     },
 
@@ -23,19 +26,6 @@ let dataService = {
         this.basketDishes = JSON.parse(localStorage.getItem("basketDishes")) || [];
     }
 }
-
-// Добавление блюда в локальную память браузера
-// const CompeleteOrderBtn = document.querySelector("#completeOrder");
-// let order = {
-//         "firstName":"",
-//         "secondName": "",
-//         "phoneNumber": "",
-//         "dishes":[],
-//         "description":"",
-//         "totalPrice":""
-//     }
-// order.firstName = ;
-// dataService.add(order);
 
 function GetJsonInfo(u_url) 
 {
@@ -67,18 +57,53 @@ function PostOrder(object)
         .then((response) => response.json())
 }
 
-/*
+//функция для изменения данных о товарах в корзине
+function refreshDataBasket()
+{
+    
+}
+
+function updatePrice(formDiv, amount)
+{
+    const priceDiv = formDiv.querySelector("#totalСost");
+    const basePrice = formDiv.querySelector("#baseCost").innerHTML;
+    const newPrice = basePrice * amount;
+    priceDiv.innerHTML = newPrice; 
+}
+
+function deleteAllDishesToBasket()
+{
+    const basket = document.querySelector("#basket");
+    basket.querySelector("#basketDishesList").innerHTML = "";
+}
+
+function addDishesToBasket()
+{
+    const arrOfDishes = dataService.allbasketDishes;
+    
+    let templateDish = document.querySelector("#templateBasketDish").innerHTML;
+    let output = document.querySelector("#basketDishesList");
+    console.log(output);
+    arrOfDishes.forEach(element => {
+        let html = Mustache.render(templateDish, element);
+        output.insertAdjacentHTML("beforeend", html);
+        console.log(element);
+    });
+}
+
+function sendOrderToJSON(object)
+{
+    /*
     Код для отправки на сервер json объекта с блюдами
     В консоль: npx json-server --watch db.json
-
+    */
     let url = "http://localhost:3000/order";
-    let tast = !object;
     fetch(url, {
         method: 'POST',
-        body: JSON.stringify(task),
+        body: JSON.stringify(object),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },
     })
         .then((response) => response.json())
-*/
+}

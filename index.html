@@ -50,8 +50,8 @@
             <a href="#basket" class="col s4 m3 l2 flex_center modal-trigger">
                 <img class="col s10 m7 l6 responsive-img padding_2vh" src="./Pages/Main Page/imgs/icon_shopping_basket.png">
                 <div class="flex_right direction_column aling_content_right">
-                    <p class="hide-on-med-and-down">0 грн</p>
-                    <p class="hide-on-med-and-down">0 товаров</p>
+                    <p class="hide-on-med-and-down"><span id="basketTotalCost">0</span> грн</p>
+                    <p class="hide-on-med-and-down"><span id="basketTotalAmount">0</span> товаров</p>
                 </div>
             </a>
 
@@ -59,23 +59,27 @@
                 <div class="modal-content">
 
                     <h5>Корзина</h5>
-                    <div class="row z-depth-1 basket_section">
+                    <div id="basketList" class="row z-depth-1 basket_section">
 
                         <template id="templateBasketDish">
                             <div class="col s12">
                                 <div class="row zero_margin_bottom">
                                     <div class="col s5">
-                                        <img class="responsive-img" src="" alt="">
+                                        <img class="responsive-img" src="{{elImageSrc}}" alt="">
                                     </div>
                                     <div class="flex direction_column">
-                                        <p>{{title}}</p>
-                                        <p>Количество: {{count}}</p>
-                                        <p>{{price}} грн</p>
+                                        <p>{{elTitle}}</p>
+                                        <p>Количество: {{elAmount}}</p>
+                                        <p>{{elTotalPrice}} грн</p>
+                                        <p>Комментарий к блюду: {{elUserComment}}</p>
                                     </div>
                                 </div>
                             </div>
                         </template>
 
+                        <div id="basketDishesList">
+
+                        </div>
                     </div>
 
                     <h5>Оформление заказа</h5>
@@ -84,23 +88,23 @@
                         <form method="get">
                             <div>
                                 <label for="name">Имя</label>
-                                <input type="text" pattern="^\D{2,}$"/>
+                                <input name="fullName" type="text" pattern="^\D{2,}$"/>
                             </div>
                 
                             <div>
                                 <label for="address">Адрес</label>
-                                <input type="text" pattern="^\D{2,}$"/>
+                                <input name="address" type="text" pattern="^\D{2,}$"/>
                             </div>
                 
                             <div>
                                 <label for="phone">Номер телефона</label>
-                                <input type="text" placeholder="+447500000000" 
+                                <input name="phone" type="text" placeholder="+447500000000" 
                                     pattern="^\+\d{12}$"/>
                             </div>
                 
                             <div>
                                 <label for="email">E-mail</label>
-                                <input type="text" placeholder="example@domain.com" 
+                                <input name="email" type="text" placeholder="example@domain.com" 
                                     pattern="^(\S{5,}@\D{3,5}\.\D{2,5})$"/>
                             </div>
                 
@@ -199,7 +203,7 @@
                 <div class="col s6 m3">
                     <div class="card">
                         <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="{{img}}">
+                            <img id="dishImage" class="activator" src="{{img}}">
                         </div>
         
                         <div class="card-content">
@@ -280,7 +284,7 @@
                                     </div>
     
                                     <div>
-                                        <h5>Общая стоимость: <span id="totalСost">{{price}}</span> грн</h5>
+                                        <h5>Общая стоимость: <span style="display: none;" id="baseCost">{{price}}</span><span id="totalСost">{{price}}</span> грн</h5>
                                     </div>
                                     
                                 </div>
