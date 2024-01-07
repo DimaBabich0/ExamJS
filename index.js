@@ -116,6 +116,11 @@ btnCompleteOrder.addEventListener("click", function()
     const comment = basket.querySelector("textarea").value;
     const dishes = dataService.allbasketDishes;
 
+    let totalPrice = 0;
+    dishes.forEach(element => {
+        totalPrice += parseInt(element.elTotalPrice);
+    });
+
     const order = {
         "fullName": fullName,
         "phoneNumber": phone,
@@ -123,7 +128,7 @@ btnCompleteOrder.addEventListener("click", function()
         "description": comment,
         "email": email,
         "email": address,
-        "totalPrice":""
+        "totalPrice": totalPrice
     }
 
     sendOrderToJSON(order);
