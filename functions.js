@@ -7,10 +7,10 @@ let dataService = {
 
     add(dish) {
         this.allbasketDishes.push(dish);
-        refreshDataBasket();
         deleteAllDishesToBasket();
         addDishesToBasket();
         this.save();
+        refreshDataBasket();
     },
 
     save() {
@@ -60,7 +60,21 @@ function PostOrder(object)
 //функция для изменения данных о товарах в корзине
 function refreshDataBasket()
 {
-    
+    dataService.open();
+    console.log(dataService.allbasketDishes);
+    const price = document.querySelector("#basketTotalCost");
+    const amt = document.querySelector("#basketTotalAmount");
+
+    let newPrice = 0;
+    let newAmount = 0;
+
+    for (let i = 0; i < dataService.allbasketDishes.length; i++)
+    {
+        newPrice += parseFloat(dataService.allbasketDishes[i].elTotalPrice);
+        newAmount += parseFloat(dataService.allbasketDishes[i].elAmount);
+    }
+    price.innerHTML = newPrice;
+    amt.innerHTML = newAmount;
 }
 
 function updatePrice(formDiv, amount)
