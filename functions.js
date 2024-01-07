@@ -24,6 +24,19 @@ let dataService = {
     }
 }
 
+// Добавление блюда в локальную память браузера
+// const CompeleteOrderBtn = document.querySelector("#completeOrder");
+// let order = {
+//         "firstName":"",
+//         "secondName": "",
+//         "phoneNumber": "",
+//         "dishes":[],
+//         "description":"",
+//         "totalPrice":""
+//     }
+// order.firstName = ;
+// dataService.add(order);
+
 function GetJsonInfo(u_url) 
 {
     let arr = new Array();

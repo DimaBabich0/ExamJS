@@ -34,3 +34,38 @@ Pasta.forEach(element => {
     let htmlPasta = Mustache.render(templatePasta, element);
     outputPasta.insertAdjacentHTML("beforeend", htmlPasta);
 });
+
+//Алгоритм добавления пицц в local storage
+const addToBasketBtn = document.querySelectorAll("#addToBasket");
+addToBasketBtn.forEach(element => {
+    element.addEventListener("click", function()
+    {
+        //поиск формы блюда
+        const form = element.parentElement.parentElement.firstElementChild;
+        console.log(form);
+        const inputs = form.querySelectorAll("input")
+        
+        //параметры для объекта
+        const title = form.querySelector("#dishTitle").innerHTML;
+        const userComment = form.querySelector("#userComment").value;
+        const amount = form.querySelector("#inputAmount").value;
+        const totalСost = form.querySelector("#totalСost").innerHTML;
+        const inputRadios = new Array();
+        inputs.forEach(element => {
+            if(element.checked)
+                inputRadios.push(element.value);
+        });
+
+        //создание объекта
+        let dish = {
+            "elTitle": title,
+            "elInputRadios": inputRadios,
+            "elUserComment": userComment,
+            "elAmount": amount,
+            "elTotalPrice": totalСost
+        }
+        
+        //добавление объекта в local storage
+        dataService.add(dish);
+    });
+});

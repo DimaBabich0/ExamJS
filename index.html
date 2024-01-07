@@ -115,7 +115,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn">Завершить заказ</a>
+                    <a id="completeOrder" href="#!" class="modal-close waves-effect waves-green btn">Завершить заказ</a>
                 </div>
             </div>
         </div>
@@ -211,81 +211,81 @@
 
                             <div id="{{id}}" class="modal">
                                 <div class="modal-content">
-                                    <h5>{{title}}</h5>
+                                    <h5 id="dishTitle">{{title}}</h5>
 
                                     <form action="#">
                                         <div class="row">
-                                                <div class="col s12 m4">
-                                                    <p>Тип коржа:</p>
-                                                    <p>
-                                                        <label>
-                                                            <input name="group1" type="radio" checked />
-                                                            <span>Пышный</span>
-                                                        </label>
-                                                    </p>
-                                                    <p>
-                                                        <label>
-                                                            <input name="group1" type="radio" />
-                                                            <span>Тонкий</span>
-                                                        </label>
-                                                    </p>
-                                                </div>
-                
-                                                <div class="col s12 m4">
-                                                    <p>Размер:</p>
-                                                    <p>
-                                                        <label>
-                                                            <input name="group1" type="radio" checked />
-                                                            <span>22 см</span>
-                                                        </label>
-                                                    </p>
-                                                    <p>
-                                                        <label>
-                                                            <input name="group1" type="radio" />
-                                                            <span>32 см</span>
-                                                        </label>
-                                                    </p>
-                                                </div>
-                
-                                                <div class="col s12 m4">
-                                                    <p>Соус (в подарок):</p>
-                                                    <p>
-                                                        <label>
-                                                            <input name="group1" type="radio" checked />
-                                                            <span>Без соуса</span>
-                                                        </label>
-                                                    </p>
-                                                    <p>
-                                                        <label>
-                                                            <input name="group1" type="radio" />
-                                                            <span>Томатный</span>
-                                                        </label>
-                                                    </p>
-                                                </div>
+                                            <div class="col s12 m4">
+                                                <p>Тип коржа:</p>
+                                                <p>
+                                                    <label>
+                                                        <input name="сrustType" type="radio" value="Пышный" checked/>
+                                                        <span>Пышный</span>
+                                                    </label>
+                                                </p>
+                                                <p>
+                                                    <label>
+                                                        <input name="сrustType" type="radio" value="Тонкий"/>
+                                                        <span>Тонкий</span>
+                                                    </label>
+                                                </p>
+                                        </div>
+        
+                                        <div class="col s12 m4">
+                                            <p>Размер:</p>
+                                            <p>
+                                                <label>
+                                                    <input name="size" type="radio" value="22 см" checked />
+                                                    <span>22 см</span>
+                                                </label>
+                                            </p>
+                                            <p>
+                                                <label>
+                                                    <input name="size" type="radio" value="32 см"/>
+                                                    <span>32 см</span>
+                                                </label>
+                                            </p>
+                                        </div>
+        
+                                        <div class="col s12 m4">
+                                            <p>Соус (в подарок):</p>
+                                            <p>
+                                                <label>
+                                                    <input name="sause" type="radio" value="Без соуса" checked />
+                                                    <span>Без соуса</span>
+                                                </label>
+                                            </p>
+                                            <p>
+                                                <label>
+                                                    <input name="sause" type="radio" value="Томатный"/>
+                                                    <span>Томатный</span>
+                                                </label>
+                                            </p>
+                                        </div>
                                         </div>
         
                                         <div>
                                             <p>Комментарий к товару:</p>
-                                            <textarea></textarea>
+                                            <textarea id="userComment"></textarea>
                                         </div>
                                     </form>
 
                                     <div>
                                         <p>Количество:</p>
                                         <div class="flex_center justify-content-center">
-                                            <a class="waves-effect waves-light btn">-</a>
-                                            <input type="number" step="1" value="1" min="1" max="999" readonly style="padding: 0vh 1vh; margin: 0%;">
-                                            <a class="waves-effect waves-light btn">+</a>
+                                            <a id="btnAmountLess" class="waves-effect waves-light btn">-</a>
+                                            <input id="inputAmount" type="number" step="1" value="1" min="1" max="999" readonly style="padding: 0vh 1vh; margin: 0%;">
+                                            <a id="btnAmountMore" class="waves-effect waves-light btn">+</a>
                                         </div>
                                     </div>
     
                                     <div>
-                                        <h5>Общая стоимость: 199 грн</h5>
+                                        <h5>Общая стоимость: <span id="totalСost">{{price}}</span> грн</h5>
                                     </div>
                                     
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Добавить в корзину</a>
+                                    <a href="#!" id="addToBasket" class="modal-close waves-effect waves-green btn-flat">Добавить в корзину</a>
                                 </div>
                             </div>
     
@@ -308,7 +308,7 @@
             <!-- Название раздела -->
             <h1 class="col s12 center margin_top_bottom">Паста</h1>
 
-            <!-- Template для пасты -->
+            <!-- Template для пиццы -->
             <template id="templateCardPasta">
                 <div class="col s6 m3">
                     <div class="card">
@@ -317,21 +317,16 @@
                         </div>
         
                         <div class="card-content">
-
                             <span class="card-title activator grey-text text-darken-4">{{title}}<i class="material-icons right">more_vert</i></span>
                             <span class="card-subtitle grey-text text-darken-4">{{price}} грн</span>
                             <br>
                             <br>
-                            <a class="waves-effect waves-light btn modal-trigger" href="">Добавить товар</a>
-                            <div id="" class="modal">
+                            <a class="waves-effect waves-light btn modal-trigger" href="#{{id}}">Добавить товар</a>
+
+                            <div id="{{id}}" class="modal">
                                 <div class="modal-content">
                                     <h5>{{title}}</h5>
-    
-                                    <div>
-                                        <p>Комментарий к товару:</p>
-                                        <textarea></textarea>
-                                    </div>
-    
+
                                     <div>
                                         <p>Количество:</p>
                                         <div class="flex_center justify-content-center">
@@ -342,11 +337,12 @@
                                     </div>
     
                                     <div>
-                                        <h5>Общая стоимость: 199 грн</h5>
+                                        <h5>Общая стоимость: {{price}} грн</h5>
                                     </div>
+                                    
                                 </div>
                                 <div class="modal-footer">
-                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Добавить в корзину</a>
+                                    <a href="#!" id="addToBasket" class="modal-close waves-effect waves-green btn-flat">Добавить в корзину</a>
                                 </div>
                             </div>
     
@@ -361,7 +357,6 @@
                     </div>
                 </div>
             </template>
-
         </div>
     </main>
 
