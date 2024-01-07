@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 document.addEventListener("DOMContentLoaded", function() {
     refreshDataBasket();
+    addDishesToBasket();
 });
 
 //Вывод пицц

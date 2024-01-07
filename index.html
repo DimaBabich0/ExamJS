@@ -312,12 +312,12 @@
             <!-- Название раздела -->
             <h1 class="col s12 center margin_top_bottom">Паста</h1>
 
-            <!-- Template для пиццы -->
+            <!-- Template для пасты -->
             <template id="templateCardPasta">
                 <div class="col s6 m3">
                     <div class="card">
                         <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="{{img}}">
+                            <img id="dishImage" class="activator" src="{{img}}">
                         </div>
         
                         <div class="card-content">
@@ -329,19 +329,22 @@
 
                             <div id="{{id}}" class="modal">
                                 <div class="modal-content">
-                                    <h5>{{title}}</h5>
+                                    <h5 id="dishTitle">{{title}}</h5>
+                                    <div>
+                                        <p>Комментарий к товару:</p>
+                                        <textarea id="userComment"></textarea>
+                                    </div>
 
                                     <div>
                                         <p>Количество:</p>
                                         <div class="flex_center justify-content-center">
-                                            <a class="waves-effect waves-light btn">-</a>
-                                            <input type="number" step="1" value="1" min="1" max="999" readonly style="padding: 0vh 1vh; margin: 0%;">
-                                            <a class="waves-effect waves-light btn">+</a>
+                                            <a id="btnAmountLess" class="waves-effect waves-light btn">-</a>
+                                            <input id="inputAmount" type="number" step="1" value="1" min="1" max="999" readonly style="padding: 0vh 1vh; margin: 0%;">
+                                            <a id="btnAmountMore" class="waves-effect waves-light btn">+</a>
                                         </div>
                                     </div>
-    
                                     <div>
-                                        <h5>Общая стоимость: {{price}} грн</h5>
+                                        <h5>Общая стоимость: <span style="display: none;" id="baseCost">{{price}}</span><span id="totalСost">{{price}}</span> грн</h5>
                                     </div>
                                     
                                 </div>
