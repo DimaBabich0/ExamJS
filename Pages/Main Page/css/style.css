@@ -7,6 +7,11 @@ body::-webkit-scrollbar
     display: none;
 }
 
+/* *
+{
+    outline: 1px solid red;
+} */
+
 .flex
 {
     display: flex;
@@ -155,4 +160,20 @@ a
 .indicator-item
 {
     margin: 0.5vh 4px!important;
+}
+
+@media only screen and (max-width: 830px){
+    .card
+    {
+        /* background-color: rgb(177, 156, 255); */
+        height: 45vh;
+    }
+}
+@media only screen and (max-width: 1270px) and (min-width: 831px)
+{
+    .card
+    {
+        /* background-color: rgb(176, 255, 156); */
+        height: 55vh;
+    }
 }
