@@ -62,19 +62,24 @@ function refreshDataBasket()
 {
     dataService.open();
     console.log(dataService.allbasketDishes);
-    const price = document.querySelector("#basketTotalCost");
-    const amt = document.querySelector("#basketTotalAmount");
+    
+    const priceElements = document.querySelectorAll("#basketTotalCost");
+    const amtElements = document.querySelectorAll("#basketTotalAmount");
 
     let newPrice = 0;
     let newAmount = 0;
-
-    for (let i = 0; i < dataService.allbasketDishes.length; i++)
-    {
+    
+    for (let i = 0; i < dataService.allbasketDishes.length; i++) {
         newPrice += parseFloat(dataService.allbasketDishes[i].elTotalPrice);
         newAmount += parseFloat(dataService.allbasketDishes[i].elAmount);
     }
-    price.innerHTML = newPrice;
-    amt.innerHTML = newAmount;
+    priceElements.forEach(element => {
+        element.innerHTML = newPrice;
+    });
+
+    amtElements.forEach(element => {
+        element.innerHTML = newAmount;
+    });
 }
 
 function updatePrice(formDiv, amount)

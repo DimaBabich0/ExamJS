@@ -114,13 +114,23 @@
                                 <textarea name="commentary" minlength="1" maxlength="128"></textarea>
                             </div>
                         </form>
-
                     </div>
-
                 </div>
 
                 <div class="modal-footer">
-                    <a id="completeOrder" href="#!" class="modal-close waves-effect waves-green btn">Завершить заказ</a>
+                    <div class="row">
+                        <div class="col s3 total-basket">
+                            <p>Всего:</p>
+                            <p><span id="basketTotalCost">0</span> грн</p>
+                            <p><span id="basketTotalAmount">0</span> товаров</p>
+                            <br>
+                        </div>
+                        <div class="col s9">
+                            <a id="completeOrder" href="#!" class="modal-close waves-effect waves-green btn">Завершить заказ</a>
+                        </div>
+                    </div>
+                    
+                    
                 </div>
             </div>
         </div>
