@@ -68,11 +68,11 @@
                                         <img class="responsive-img" src="{{elImageSrc}}" alt="">
                                     </div>
                                     <div class="flex direction_column basket-class">
-                                        <p>{{elTitle}}</p>
-                                        <p>Количество: {{elAmount}}</p>
-                                        <p>{{elTotalPrice}} грн</p>
+                                        <p id="basketDishTitle">{{elTitle}}</p>
+                                        <p>Количество: <span id="basketAmount">{{elAmount}}</span></p>
+                                        <p><span id="basketTotalPrice">{{elTotalPrice}}</span> грн</p>
                                         <p>Комментарий к блюду: {{elUserComment}}</p>
-                                        <a class="waves-effect waves-light red btn modal-trigger" id="deleteDish">Удалить товар</a>
+                                        <a class="waves-effect waves-light red btn modal-trigger" id="btnDeleteDish">Удалить товар</a>
                                     </div>
                                 </div>
                             </div>
@@ -118,14 +118,14 @@
                 </div>
 
                 <div class="modal-footer">
-                    <div class="row">
-                        <div class="col s3 total-basket">
+                    <div class="flex_center">
+                        <div class="col s6 total-basket">
                             <p>Всего:</p>
                             <p><span id="basketTotalCost">0</span> грн</p>
                             <p><span id="basketTotalAmount">0</span> товаров</p>
                             <br>
                         </div>
-                        <div class="col s9">
+                        <div class="col s6">
                             <a id="completeOrder" href="#!" class="modal-close waves-effect waves-green btn">Завершить заказ</a>
                         </div>
                     </div>

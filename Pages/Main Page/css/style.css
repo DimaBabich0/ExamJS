@@ -173,7 +173,7 @@ a
 {
     display: flex;
     flex-direction: column;
-    align-items: last baseline;
+    align-items: flex-start;
 }
 .basket-class p:first-child
 {

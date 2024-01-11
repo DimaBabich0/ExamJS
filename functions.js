@@ -11,6 +11,7 @@ let dataService = {
         addDishesToBasket();
         this.save();
         refreshDataBasket();
+        addEventToBtnDeleteDish();
     },
 
     save() {
@@ -20,6 +21,23 @@ let dataService = {
     delete() {
         localStorage.setItem("basketDishes", JSON.stringify([]));
         this.basketDishes = [];
+    },
+
+    deleteByData(title, amount, totalPrice)
+    {
+        for (let i = 0; i < this.basketDishes.length; i++) 
+        {
+            const element = this.basketDishes[i];
+            if(title == element.elTitle &&
+                amount == element.elAmount &&
+                totalPrice == element.elTotalPrice)
+            {
+                this.basketDishes.splice(i, 1);
+                this.save();
+                refreshDataBasket();
+                return;
+            }
+        }
     },
 
     open() {
@@ -105,7 +123,25 @@ function addDishesToBasket()
     arrOfDishes.forEach(element => {
         let html = Mustache.render(templateDish, element);
         output.insertAdjacentHTML("beforeend", html);
-        console.log(element);
+    });
+}
+
+function addEventBtnDeleteDish()
+{
+    const btnDelDishFromBasket = document.querySelectorAll("#btnDeleteDish");
+    console.log(btnDelDishFromBasket);
+    btnDelDishFromBasket.forEach(element => {
+        element.addEventListener("click", function ()
+        {
+            const form = element.parentElement.parentElement;
+
+            const title = form.querySelector("#basketDishTitle").innerHTML;
+            const amount = form.querySelector("#basketAmount").innerHTML;
+            const totalPrice = form.querySelector("#basketTotalPrice").innerHTML;
+
+            form.remove();
+            dataService.deleteByData(title, amount, totalPrice);
+        });
     });
 }
 
