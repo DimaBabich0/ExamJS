@@ -11,7 +11,7 @@ let dataService = {
         addDishesToBasket();
         this.save();
         refreshDataBasket();
-        addEventToBtnDeleteDish();
+        addEventBtnDeleteDish();
     },
 
     save() {
@@ -129,7 +129,6 @@ function addDishesToBasket()
 function addEventBtnDeleteDish()
 {
     const btnDelDishFromBasket = document.querySelectorAll("#btnDeleteDish");
-    console.log(btnDelDishFromBasket);
     btnDelDishFromBasket.forEach(element => {
         element.addEventListener("click", function ()
         {
@@ -138,7 +137,7 @@ function addEventBtnDeleteDish()
             const title = form.querySelector("#basketDishTitle").innerHTML;
             const amount = form.querySelector("#basketAmount").innerHTML;
             const totalPrice = form.querySelector("#basketTotalPrice").innerHTML;
-
+            
             form.remove();
             dataService.deleteByData(title, amount, totalPrice);
         });
