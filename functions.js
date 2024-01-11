@@ -61,7 +61,6 @@ function PostOrder(object)
 function refreshDataBasket()
 {
     dataService.open();
-    console.log(dataService.allbasketDishes);
     const price = document.querySelector("#basketTotalCost");
     const amt = document.querySelector("#basketTotalAmount");
 
@@ -97,7 +96,7 @@ function addDishesToBasket()
     
     let templateDish = document.querySelector("#templateBasketDish").innerHTML;
     let output = document.querySelector("#basketDishesList");
-    console.log(output);
+
     arrOfDishes.forEach(element => {
         let html = Mustache.render(templateDish, element);
         output.insertAdjacentHTML("beforeend", html);
