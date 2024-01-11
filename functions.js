@@ -138,8 +138,10 @@ function addEventBtnDeleteDish()
             const amount = form.querySelector("#basketAmount").innerHTML;
             const totalPrice = form.querySelector("#basketTotalPrice").innerHTML;
             
-            form.remove();
-            dataService.deleteByData(title, amount, totalPrice);
+            $(form).slideUp(500, function () {
+                $(this).parent().remove();
+                dataService.deleteByData(title, amount, totalPrice);
+            });
         });
     });
 }
