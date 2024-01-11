@@ -20,6 +20,15 @@ document.addEventListener("DOMContentLoaded", function() {
     addEventBtnDeleteDish();
 });
 
+//Preloader
+let mask = document.querySelector('.mask');
+window.addEventListener('load', () =>{
+    mask.classList.add('hide');
+    setTimeout(() => {
+        mask.remove();
+    }, 600);
+})
+
 //Вывод пицц
 const JSONPathPizza = "./Pages/JSON/pizzas.json";
 let Pizzas = GetJsonInfo(JSONPathPizza);
@@ -140,3 +149,4 @@ btnCompleteOrder.addEventListener("click", function()
     location.reload();
     dataService.delete();
 });
+
