@@ -146,7 +146,11 @@ btnCompleteOrder.addEventListener("click", function()
     }
 
     sendOrderToJSON(order);
-    location.reload();
+    
     dataService.delete();
+    deleteAllDishesToBasket();
+    refreshDataBasket();
+    addDishesToBasket();
+    addEventBtnDeleteDish();
+    M.toast({html: 'Заказ отправлен. Ждите звонка для потверждения заказа.'})
 });
-
